@@ -13,8 +13,7 @@ import java.util.Collection;
 
 import static java.util.Arrays.asList;
 
-@Path("/service")
-@Produces({"application/json", "application/xml"})
+@Path("/")
 public class Servlet {
 
   @Inject
@@ -32,6 +31,7 @@ public class Servlet {
 
   @GET
   @Path("test")
+  @Produces({"text/plain"})
   public String getTest() {
     return "test";
   }
