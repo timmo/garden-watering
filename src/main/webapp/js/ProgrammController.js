@@ -6,7 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-function ProgrammController($scope) {
+function ProgrammController($scope, $http) {
     $scope.status = sampleData;
     $scope.statusToString = function(statusEnum) {
         if (statusEnum == "OPEN") return "funzt";
@@ -16,4 +16,10 @@ function ProgrammController($scope) {
     $scope.startProgram = function() {
         console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxx Start PRogram');
     };
+    $scope.getStatus = function() {
+        $http.get('/json/status.json').success(function (data) {
+            $scope.status = data;
+//            console.log("" + data);
+        });
+    }
 }
