@@ -1,4 +1,8 @@
 
+Kickstart with maven and jetty / jersey by typing the following in your console:
+
+    > mvn compile
+    > mvn jetty:run-exploded
 
 
 
@@ -19,7 +23,7 @@ GET http://localhost:80/status
                 { id : "2", name : "Outlet 2", duration : 20, remaining : 20, status : "closed" },
                 { id : "3", name : "Outlet 3", duration : 20, remaining : 20, status : "closed" }
             ]
-        }            
+        }
     }
 
 
