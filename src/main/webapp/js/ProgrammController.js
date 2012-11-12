@@ -8,4 +8,12 @@
 
 function ProgrammController($scope) {
     $scope.status = sampleData;
+    $scope.statusToString = function(statusEnum) {
+        if (statusEnum == "OPEN") return "funzt";
+        if (statusEnum == "CLOSED") return "aus die maus";
+        return "n.n.";
+    };
+    $scope.startProgram = function() {
+        console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxx Start PRogram');
+    };
 }
