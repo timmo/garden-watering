@@ -10,7 +10,7 @@ function ProgrammController($scope, $http) {
     return "n.n.";
   };
 
-  $scope.getStatus = function () {
+  $scope.updateStatus = function () {
     $http.get('/rest/status').success(function (data) {
       $scope.status = data;
     });
@@ -18,9 +18,26 @@ function ProgrammController($scope, $http) {
 
   $scope.program = function (command) {
     $http.post("/rest/program?command=" + command)
-    $scope.getStatus()
+    $scope.updateStatus()
   };
 
-  $scope.status = $scope.getStatus();
+  $scope.runButtonClass = function () {
+    if (typeof $scope.status == "undefined") {
+      return "";
+    }
+    if ($scope.status.program.status == "RUNNING") {
+      return "hide";
+    }
+  }
+  $scope.stopButtonClass = function () {
+    if (typeof $scope.status == "undefined") {
+      return "";
+    }
+    if ($scope.status.program.status != "RUNNING") {
+      return "hide";
+    }
+  }
+
+  $scope.updateStatus();
 
 }
