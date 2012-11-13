@@ -1,0 +1,28 @@
+<div ng-controller="ProgrammController">
+
+  <label>Status: {{status.program.status}}</label>
+  <br>
+  <label for="programStartTime">StartTime:</label><input id="programStartTime" type="text" ng-model="status.program.startTime"/>
+
+
+  <table>
+    <tr>
+      <th>Outlet</th>
+      <th>Duration [minutes]</th>
+      <th>Status</th>
+    </tr>
+    <tr ng-repeat="outlet in status.program.outlets">
+      <td>{{outlet.id}}</td>
+      <td>
+        <input class="input-mini" name="outlet_{{outlet.id}}" type="text" ng-model="outlet.duration">
+      </td>
+      <td>
+        <label>{{statusToString(outlet.status)}}</label>
+      </td>
+    </tr>
+  </table>
+
+  <button class="btn-small" ng-click="program('run')" ng-class="runButtonClass()">Run</button>
+  <button class="btn-small" ng-click="program('stop')" ng-class="stopButtonClass()">Stop</button>
+  <button class="btn-small" ng-click="updateStatus()">Refresh</button>
+</div>

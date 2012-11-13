@@ -1,49 +1,19 @@
-<html ng-app>
+<html ng-app="GardenWateringApp">
 
 <head>
   <title>Garden Watering Controll</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link href="./css/bootstrap.css" rel="stylesheet">
-  <script type="text/javascript" src="js/angular.min.js"></script>
-  <script type="text/javascript" src="json/sampledata.js"></script>
-  <script type="text/javascript" src="js/ProgrammController.js"></script>
-  <style type="text/css">
-    .hide {
-      display: none;
-    }
-  </style>
 </head>
 
 <body>
 <h1>Garden Watering Controll</h1>
 
-<div ng-controller="ProgrammController">
+  <ng-include src="'/templates/program-template.html'"></ng-include>
 
-  <label>Status: {{status.program.status}}</label>
-  <br>
-  <label for="programStartTime">StartTime:</label><input id="programStartTime" type="text" ng-model="status.program.startTime"/>
-
-  <table>
-    <tr>
-      <th>Outlet</th>
-      <th>Duration [minutes]</th>
-      <th>Status</th>
-    </tr>
-    <tr ng-repeat="outlet in status.program.outlets">
-      <td>{{outlet.id}}</td>
-      <td>
-        <input class="input-mini" name="outlet_{{outlet.id}}" type="text" ng-model="outlet.duration">
-      </td>
-      <td>
-        <label>{{statusToString(outlet.status)}}</label>
-      </td>
-    </tr>
-  </table>
-
-  <button class="btn-small" ng-click="program('run')" ng-class="runButtonClass()">Run</button>
-  <button class="btn-small" ng-click="program('stop')" ng-class="stopButtonClass()">Stop</button>
-  <button class="btn-small" ng-click="updateStatus()">Refresh</button>
-</div>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/ProgrammController.js"></script>
 
 </body>
 </html>
