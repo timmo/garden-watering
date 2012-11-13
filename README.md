@@ -38,6 +38,6 @@ Update Program
 --------------
 
 POST http://localhost:80/program?startTime=21:00
-POST http://localhost:80/program?command=startNow
-POST http://localhost:80/program?command=stopNow
+POST http://localhost:80/program?command=run
+POST http://localhost:80/program?command=stop
 

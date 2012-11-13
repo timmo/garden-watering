@@ -10,15 +10,16 @@ function ProgrammController($scope, $http) {
     return "n.n.";
   };
 
-  $scope.startProgram = function () {
-    console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxx Start PRogram');
-  };
-
   $scope.getStatus = function () {
     $http.get('/rest/status').success(function (data) {
       $scope.status = data;
     });
   }
+
+  $scope.program = function (command) {
+    $http.post("/rest/program?command=" + command)
+    $scope.getStatus()
+  };
 
   $scope.status = $scope.getStatus();
 
