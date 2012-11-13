@@ -21,21 +21,11 @@ function ProgrammController($scope, $http) {
     $scope.updateStatus()
   };
 
-  $scope.runButtonClass = function () {
+  $scope.showRunButton = function () {
     if (typeof $scope.status == "undefined") {
-      return "";
+      return true;
     }
-    if ($scope.status.program.status == "RUNNING") {
-      return "hide";
-    }
-  }
-  $scope.stopButtonClass = function () {
-    if (typeof $scope.status == "undefined") {
-      return "";
-    }
-    if ($scope.status.program.status != "RUNNING") {
-      return "hide";
-    }
+    return $scope.status.program.status != "RUNNING"
   }
 
   $scope.updateStatus();

@@ -23,7 +23,8 @@
     </tr>
   </table>
 
-  <button class="btn-small" ng-click="program('run')" ng-class="runButtonClass()">Run</button>
-  <button class="btn-small" ng-click="program('stop')" ng-class="stopButtonClass()">Stop</button>
-  <button class="btn-small" ng-click="updateStatus()">Refresh</button>
+  <button class="btn-small" ng-click="program('run')" ng-show="showRunButton()">Run</button>
+  <button class="btn-small" ng-click="program('stop')" ng-show="! showRunButton()">Stop</button>
+  <p/>
+  <!--<button class="btn-small" ng-click="updateStatus()">Refresh</button>-->
 </div>
