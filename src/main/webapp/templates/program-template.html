@@ -12,6 +12,7 @@
       <th>Status</th>
     </tr>
     <tr ng-repeat="outlet in status.program.outlets">
+      <!--<ng-include src="'/templates/outlet-template.html'"></ng-include>-->
       <td>{{outlet.id}}</td>
       <td>
         <input class="input-mini" name="outlet_{{outlet.id}}" type="text" ng-model="outlet.duration">
