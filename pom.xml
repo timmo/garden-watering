@@ -14,27 +14,27 @@
   </properties>
 
   <dependencies>
-<!-->    <dependency>-->
-      <!--<groupId>javax</groupId>-->
-      <!--<artifactId>javaee-web-api</artifactId>-->
-      <!--<version>6.0</version>-->
-      <!--<scope>provided</scope>-->
-    <!--</dependency>-->
-    <!--<dependency>-->
-      <!--<groupId>com.sun.jersey</groupId>-->
-      <!--<artifactId>jersey-server</artifactId>-->
-      <!--<version>1.14</version>-->
-    <!--</dependency>-->
-    <!--<dependency>-->
-      <!--<groupId>com.sun.jersey</groupId>-->
-      <!--<artifactId>jersey-servlet</artifactId>-->
-      <!--<version>1.14</version>-->
-    <!--</dependency>-->
-    <!--<dependency>-->
-      <!--<groupId>com.sun.jersey</groupId>-->
-      <!--<artifactId>jersey-json</artifactId>-->
-      <!--<version>1.14</version>-->
-    <!--</dependency>-->
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-web-api</artifactId>
+      <version>6.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.jersey</groupId>
+      <artifactId>jersey-server</artifactId>
+      <version>1.14</version>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.jersey</groupId>
+      <artifactId>jersey-servlet</artifactId>
+      <version>1.14</version>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.jersey</groupId>
+      <artifactId>jersey-json</artifactId>
+      <version>1.14</version>
+    </dependency>
   </dependencies>
 
   <build>
