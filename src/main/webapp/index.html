@@ -4,7 +4,6 @@
   <title>Garden Watering Controll</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link href="./css/bootstrap.css" rel="stylesheet">
-  <script type="text/javascript" language="javascript" src="js/logic.js"></script>
   <script type="text/javascript" src="js/angular.min.js"></script>
   <script type="text/javascript" src="json/sampledata.js"></script>
   <script type="text/javascript" src="js/ProgrammController.js"></script>
@@ -13,15 +12,32 @@
 <body>
 <h1>Garden Watering Controll</h1>
 
+
 <div ng-controller="ProgrammController">
 
   <label>Status: {{status.program.status}}</label>
   <br>
-  <label for="programStartTime">StartTime:</label>
-  <input id="programStartTime" type="text" ng-model="status.program.startTime"/>
+  <label for="programStartTime">StartTime:</label><input id="programStartTime" type="text" ng-model="status.program.startTime"/>
 
   <table>
+    <tr>
+      <th>Outlet</th>
+      <th>Duration [minutes]</th>
+      <th>Status</th>
+    </tr>
+    <tr ng-repeat="outlet in status.program.outlets">
+      <td>{{outlet.id}}</td>
+      <td>
+        <input class="input-mini" name="outlet_{{outlet.id}}" type="text" ng-model="outlet.duration">
+      </td>
+      <td>
+        <label>{{statusToString(outlet.status)}}</label>
+      </td>
+    </tr>
   </table>
+
+  <button class="btn-small" ng-click="startProgram()">Run</button>
+  <button class="btn-small" ng-click="getStatus()">Refresh</button>
 </div>
 
 </body>

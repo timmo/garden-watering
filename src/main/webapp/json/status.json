@@ -1,0 +1,30 @@
+{
+    "time":"11:22",
+    "program":{
+        "startTime":"13:13",
+        "status":"idle",
+        "outlets":[
+            {
+                "id":"1",
+                "name":"Outlet 1",
+                "duration":11,
+                "remaining":10,
+                "status":"CLOSED"
+            },
+            {
+                "id":"2",
+                "name":"Outlet 2",
+                "duration":12,
+                "remaining":20,
+                "status":"OPEN"
+            },
+            {
+                "id":"3",
+                "name":"Outlet 3",
+                "duration":13,
+                "remaining":20,
+                "status":"OPEN"
+            }
+        ]
+    }
+}
