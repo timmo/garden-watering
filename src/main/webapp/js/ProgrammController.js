@@ -6,6 +6,9 @@
  * To change this template use File | Settings | File Templates.
  */
 
-function ProgrammController($scope) {
-    $scope.status = sampleData;
+function ProgrammController($scope, $http) {
+//  $scope.status = sampleData;
+  $http.get("/rest/status").success(function (data) {
+    $scope.status = data;
+  })
 }

@@ -1,56 +1,28 @@
 <html ng-app>
 
 <head>
-    <title>Gartenbewässerung</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href="./css/bootstrap.css" rel="stylesheet">
-    <script type="text/javascript" language="javascript" src="js/logic.js"></script>
-    <script type="text/javascript" src="js/angular.min.js"></script>
-    <script type="text/javascript" src="json/sampledata.js"></script>
-    <script type="text/javascript" src="js/ProgrammController.js"></script>
+  <title>Garden Watering Controll</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link href="./css/bootstrap.css" rel="stylesheet">
+  <script type="text/javascript" language="javascript" src="js/logic.js"></script>
+  <script type="text/javascript" src="js/angular.min.js"></script>
+  <script type="text/javascript" src="json/sampledata.js"></script>
+  <script type="text/javascript" src="js/ProgrammController.js"></script>
 </head>
 
-<body ng-controller="ProgrammController">
-<h1>Gartenbewässerung</h1>
+<body>
+<h1>Garden Watering Controll</h1>
 
-<label>Status: {{status.program.status}}</label>
-<br>
-<label for="programStartTime">StartTime:</label><input id="programStartTime" type="text" ng-model="status.program.startTime"/>
+<div ng-controller="ProgrammController">
 
+  <label>Status: {{status.program.status}}</label>
+  <br>
+  <label for="programStartTime">StartTime:</label>
+  <input id="programStartTime" type="text" ng-model="status.program.startTime"/>
 
-<hr>
-
-<table>
-    <tr>
-        <th>Sprenger</th>
-        <th>Dauer [Minuten]</th>
-        <th>Aktion</th>
-    </tr>
-    <tr id="s1" >
-        <td>1</td>
-        <td><input name="duration" type="text" value="0" onBlur="setDurationInMinutes('s1', value)" /></td>
-        <td>
-            <button class="btn-small" name="toggleButton" value="Run" onclick="toggle('s1')">Run</button>
-        </td>
-    </tr>
-    <tr id="s2" >
-        <td>2</td>
-        <td><input iname="duration" type="text" value="0" onBlur="setDurationInMinutes('s2', value)" /></td>
-        <td><input name="toggleButton" type="button" value="Run" onClick="toggle('s2')" /></td>
-    </tr>
-    <tr id="s3" >
-        <td>3</td>
-        <td><input name="duration" type="text" value="0" onBlur="setDurationInMinutes('s3', value)" /></td>
-        <td><input name="toggleButton" type="button" value="Run" onClick="toggle('s3')" /></td>
-    </tr>
-    <!-- <tr>
-     <td></td>
-       <td></td>
-     <td><input id="toggleProggram" type="button" value="Run all" onClick="toggle('programm')" /></td>
-   </tr> -->
-</table>
-
-
+  <table>
+  </table>
+</div>
 
 </body>
 </html>

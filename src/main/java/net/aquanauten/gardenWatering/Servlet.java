@@ -4,29 +4,23 @@
  */
 package net.aquanauten.gardenWatering;
 
-import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import java.util.Collection;
-
-import static java.util.Arrays.asList;
+import javax.ws.rs.core.MediaType;
 
 @Path("/")
 public class Servlet {
-
-  @Inject
-  ProgramFactory programFactory;
 
   public Servlet() {
     System.out.println("Servlet");
   }
 
   @GET
-  @Path("outlet/{id}")
-  public Outlet getOutlet(@PathParam("id") String id) {
-    return new Outlet("bla");
+  @Path("status")
+  @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+  public Status getStatus() {
+    return new Status();
   }
 
   @GET
@@ -36,11 +30,9 @@ public class Servlet {
     return "test";
   }
 
-  @GET
-  @Path("programs")
-  @Produces({"application/json", "application/xml"})
-  public Collection<Program> getPrograms() {
-    Program program = programFactory.createProgram(0);
-    return asList(program);
-  }
+//  @GET
+//  @Path("outlet/{id}")
+//  public Outlet getOutlet(@PathParam("id") String id) {
+//    return new Outlet("bla");
+//  }
 }

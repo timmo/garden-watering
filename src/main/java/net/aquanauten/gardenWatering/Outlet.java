@@ -4,24 +4,27 @@
  */
 package net.aquanauten.gardenWatering;
 
+import javax.persistence.Id;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
+import static net.aquanauten.gardenWatering.OutletStatus.CLOSED;
+
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Outlet implements Serializable {
 
-  String name;
-  int arduinoPort;
-  int durationInMinutes;
-  OutletStatus status;
+  @Id
+  String id;
+  int duration = 10;
+  OutletStatus status = CLOSED;
 
   public Outlet() {
   }
 
-  public Outlet(String name) {
-    this.name = name;
+  public Outlet(String id) {
+    this.id = id;
   }
 }
