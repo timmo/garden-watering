@@ -37,6 +37,13 @@ public class Servlet {
   }
 
   @GET
+  @Path("status")
+  @Produces({"application/json", "application/xml"})
+  public Status getStatus() {
+    return new Status();
+  }
+
+  @GET
   @Path("programs")
   @Produces({"application/json", "application/xml"})
   public Collection<Program> getPrograms() {

@@ -17,9 +17,8 @@ function ProgrammController($scope, $http) {
         console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxx Start PRogram');
     };
     $scope.getStatus = function() {
-        $http.get('/json/status.json').success(function (data) {
+        $http.get('/rest/status').success(function (data) {
             $scope.status = data;
-//            console.log("" + data);
         });
     }
 }

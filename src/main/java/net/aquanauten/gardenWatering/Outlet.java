@@ -13,15 +13,15 @@ import java.io.Serializable;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Outlet implements Serializable {
 
-  String name;
-  int arduinoPort;
-  int durationInMinutes;
-  OutletStatus status;
+    String name;
+    int duration;
+    OutletStatus status;
+    String id;
 
-  public Outlet() {
-  }
+    public Outlet() {
+    }
 
-  public Outlet(String name) {
-    this.name = name;
-  }
+    public Outlet(String name) {
+        this.name = name;
+    }
 }
