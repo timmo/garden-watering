@@ -20,6 +20,7 @@ class Program {
   Collection<Outlet> outlets = new ArrayList<Outlet>();
 
   Program() {
+    id = "Default";
     outlets.add(new Outlet("Front Yard 1"));
     outlets.add(new Outlet("Front Yard 2"));
     outlets.add(new Outlet("Back Yard"));

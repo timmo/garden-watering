@@ -18,6 +18,19 @@ function ProgrammController($scope, $http) {
     return $scope.status.program.status != "RUNNING"
   }
 
+  $scope.setOutletDuration = function (outlet) {
+    $http.post('/rest/outlet/' + outlet.id + "/duration/" + outlet.duration)
+        .success(function () {
+                   $scope.updateStatus();
+                 });
+  }
+  $scope.setProgramStartTime = function (program) {
+    $http.post('/rest/program/' + program.id + "/startTime/" + program.startTime)
+        .success(function () {
+                   $scope.updateStatus();
+                 });
+  }
+
   $scope.updateStatus();
 
 }
