@@ -1,13 +1,13 @@
 --- 
 applications: 
-  .: 
+  target: 
     instances: 1
-    framework: 
-      info: 
-        exec: 
-        description: Java Web Application
-        mem: 512M
-      name: java_web
     name: garden-watering
-    mem: 512M
+    framework: 
+      name: java_web
+      info: 
+        description: Java Web Application
+        exec: 
+        mem: 512M
     url: ${name}.${target-base}
+    mem: 512M

@@ -1,2 +1,2 @@
+var GardenWateringApp = angular.module('GardenWateringApp', ['filters']);
 
-var GardenWateringApp = angular.module('GardenWateringApp', [])

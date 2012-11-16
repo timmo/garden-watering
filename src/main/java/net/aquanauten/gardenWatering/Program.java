@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import static net.aquanauten.gardenWatering.ProgramStatus.PROGRAMED;
+import static net.aquanauten.gardenWatering.ProgramStatus.IDLE;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -15,7 +15,7 @@ class Program {
 
   @Id
   String id;
-  ProgramStatus status = PROGRAMED;
+  ProgramStatus status = IDLE;
   String startTime;
   Collection<Outlet> outlets = new ArrayList<Outlet>();
 

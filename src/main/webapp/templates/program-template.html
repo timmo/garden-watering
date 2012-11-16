@@ -1,8 +1,9 @@
 <div ng-controller="ProgrammController">
 
-  <label>Status: {{status.program.status}}</label>
+  <label>Status: {{ status.program.status | ProgramStatus }}</label>
   <br>
-  <label for="programStartTime">StartTime:</label><input id="programStartTime" type="text" ng-model="status.program.startTime"/>
+  <label for="programStartTime">StartTime:</label>
+  <input id="programStartTime" type="text" ng-model="status.program.startTime"/>
 
 
   <table>
@@ -19,6 +20,7 @@
       </td>
       <td>
         <label>{{statusToString(outlet.status)}}</label>
+        <!--<label>{{statusToString(outlet.status)}}</label>-->
       </td>
     </tr>
   </table>

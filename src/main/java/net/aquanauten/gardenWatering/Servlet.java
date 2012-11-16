@@ -37,7 +37,7 @@ public class Servlet {
     }
 
     if (Command.STOP.toString().equals(command)) {
-      status.program.status = ProgramStatus.PROGRAMED;
+      status.program.status = ProgramStatus.IDLE;
     }
   }
 
