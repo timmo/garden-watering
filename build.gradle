@@ -1,0 +1,23 @@
+apply plugin: "java"
+apply plugin: "maven"
+apply plugin: "war"
+
+group = "net.aquanauten"
+version = 1.0
+
+repositories {
+    maven {
+        url "c:/users/maki/.m2/repository"
+    }
+    mavenCentral()
+}
+
+dependencies {
+    compile group:'javax', name:'javaee-web-api', version:'6.0'
+
+    compile group:'com.sun.jersey', name:'jersey-server', version:'1.14'
+    compile group:'com.sun.jersey', name:'jersey-servlet', version:'1.14'
+    compile group:'com.sun.jersey', name:'jersey-json', version:'1.14'
+    compile group:'commons-lang', name:'commons-lang', version:'2.4'
+}
+
