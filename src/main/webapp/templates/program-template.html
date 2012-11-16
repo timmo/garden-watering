@@ -19,7 +19,7 @@
         <input class="input-mini" name="outlet_{{outlet.id}}" type="text" ng-model="outlet.duration">
       </td>
       <td>
-        <label>{{statusToString(outlet.status)}}</label>
+        <label>{{outlet.status | firstUpTailLower }}</label>
         <!--<label>{{statusToString(outlet.status)}}</label>-->
       </td>
     </tr>
