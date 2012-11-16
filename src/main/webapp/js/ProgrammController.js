@@ -1,15 +1,5 @@
 function ProgrammController($scope, $http) {
 
-  $scope.statusToString = function (statusEnum) {
-    if (statusEnum == "OPEN") {
-      return "Open";
-    }
-    if (statusEnum == "CLOSED") {
-      return "Closed";
-    }
-    return "n.n.";
-  };
-
   $scope.updateStatus = function () {
     $http.get('/rest/status').success(function (data) {
       $scope.status = data;

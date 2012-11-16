@@ -3,5 +3,5 @@
   <input class="input-mini" type="text" ng-model="duration">
 </td>
 <td>
-  <label>{{statusToString(status)}}</label>
+  <label>{{outlet.status | firstUpTailLower }}</label>
 </td>
