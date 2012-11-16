@@ -1,6 +1,6 @@
 <div ng-controller="ProgrammController">
 
-  <label>Status: {{ status.program.status | ProgramStatus }}</label>
+  <label>Status: {{ status.program.status | firstUpTailLower }}</label>
   <br>
   <label for="programStartTime">StartTime:</label>
   <input id="programStartTime" type="text" ng-model="status.program.startTime"/>
